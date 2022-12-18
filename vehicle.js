@@ -14,10 +14,10 @@ class Vehicle {
     start() {
         if (this.fuel > 0) {
             console.log("engine started...!!!");
-            return this.started = true;
+            this.started = true;
         } else {
             console.log("engine cannot start...");
-            return this.started = false;
+            this.started = false;
         }
     }
     accelerate() {
@@ -72,12 +72,12 @@ class Vehicle {
       
     }
 
-    typeOfVehicle(wheels) {
-        if (this.numberOfWheels == 8 && 8 == wheels) {
+    typeOfVehicle() { // Fixed redundant code
+        if (this.numberOfWheels == 8) {
             console.log(this.model + " " + this.make + " is a Truck");
-        } else if (this.numberOfWheels == 4 && 4 == wheels) {
+        } else if (this.numberOfWheels == 4) {
             console.log(this.model + " " + this.make + " is a CAr");
-        } else if (this.numberOfWheels == 2 && 2 == wheels) {
+        } else if (this.numberOfWheels == 2) {
             console.log(this.model + " " + this.make + " is a Bike");
         } else {
             console.log("Unknown type of vehicle");
@@ -86,6 +86,7 @@ class Vehicle {
 }
 
 //This exports things you want to use from this "module", more info in readme
-module.exports = {
-    Vehicle
-}
+// module.exports = {
+//     Vehicle
+// }
+// not needed with HTML
