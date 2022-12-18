@@ -20,7 +20,8 @@ class Car extends Vehicle {
     }
 
     loadPassenger(num) {
-        if (this.passenger < this.maxPassengers) {
+        let availableRoom = this.maxPassengers - this.passenger
+        if (num <= availableRoom) {
             this.passenger += num;
             console.log('Passengers loaded')
         } else {
@@ -38,6 +39,7 @@ class Car extends Vehicle {
 
 let merc = new Car("Mecury", "Sedan", "1965", "color", "mileage", 5, 160, 10, 4);
 merc.loadPassenger(1);
+merc.loadPassenger(1000);
 merc.scheduleService(20000);
 merc.start();
 merc.accelerate();
