@@ -20,7 +20,12 @@ class Car extends Vehicle {
     }
 
     loadPassenger(num) {
-        (this.passenger < this.maxPassengers) ? console.log('Passenger loaded') : console.log('Not enough space');
+        if (this.passenger < this.maxPassengers) {
+            this.passenger += num;
+            console.log('Passengers loaded')
+        } else {
+            console.log('Not enough space');
+        }
     }
 
     // start() {}
