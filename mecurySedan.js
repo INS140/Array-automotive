@@ -33,7 +33,13 @@ class Car extends Vehicle {
     // Not necessary due to inheritance
 
     scheduleService(mileage) {
-        mileage >= 30000 ? this.timeForMaintenance = true : this.timeForMaintenance = false;
+        if (mileage >= 30000) {
+            this.timeForMaintenance = true
+            console.log('Car is scheduled for service')
+         } else {
+            this.timeForMaintenance = false;
+            console.log('Car does not need service at this time')
+         }
     }
 }
 
